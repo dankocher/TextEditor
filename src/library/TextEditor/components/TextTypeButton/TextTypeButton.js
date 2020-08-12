@@ -452,20 +452,26 @@ export default class TextTypeButton extends Component{
 
         switch (type) {
             case 'foreColor':
+                //console.log('f', color)
                 //icon = 'font-color';
                 return (
-                    <div className={'foreColor'}>
+                    <div className={`foreColor${color === '#ffffff' ? ' white-c' : ''}`}>
                         <div>A</div>
-                        <div style={{backgroundColor: color}}>
+                        <div style={{
+                            backgroundColor: color
+                        }}>
                         </div>
                     </div>
                 );
             case 'hiliteColor':
+                //console.log('h', color)
                 //icon = 'fill-color';
                 return (
-                    <div className={'hiliteColor'}>
+                    <div className={`hiliteColor${color === '#ffffff' ? ' white-c' : ''}`}>
                         <div><Icon name={'color_fill'} size={18} color={'black'}/></div>
-                        <div style={{backgroundColor: color}}>
+                        <div style={{
+                            backgroundColor: color
+                        }}>
                         </div>
                     </div>
                 );

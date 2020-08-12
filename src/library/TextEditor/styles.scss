@@ -7,6 +7,10 @@ $toolsHeight: 40px;
   src: url("./assets/Apercu Pro Regular.ttf") format("truetype");
 }
 
+* {
+  font-weight: inherit;
+}
+
 .TextEditor {
   background-color: white;
   display: flex;

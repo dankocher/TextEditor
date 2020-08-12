@@ -32,6 +32,14 @@
         width: 20px;
         height: 4px;
       }
+
+      &.white-c {
+        div:last-child {
+          width: 18px;
+          height: 2px;
+          border: 1px solid;
+        }
+      }
     }
 
     .hiliteColor {
@@ -44,6 +52,14 @@
       div:last-child {
         width: 20px;
         height: 4px;
+      }
+
+      &.white-c {
+        div:last-child {
+          width: 18px;
+          height: 2px;
+          border: 1px solid;
+        }
       }
     }
 

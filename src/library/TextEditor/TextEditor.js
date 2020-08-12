@@ -64,6 +64,7 @@ class TextEditor extends React.Component {
         //console.log('MOUNT')
         //this.lastHtml = this.props.html === '' ? '<div class=\'blog-paragraph\'>' + ' ' + '</div>' : this.props.html;
         this.lastHtml = this.props.html;
+        //console.log(this.lastHtml)
         this.setState({html: this.lastHtml, text: htmlToText(shortenPicSrc(this.lastHtml)), normalizedHtml: this.props.html, htmlEditor: this.props.show || 'hide'});
     }
 
@@ -71,6 +72,7 @@ class TextEditor extends React.Component {
         //console.log('componentDidUpdate')
 
         if(this.props.clean){
+            //console.log('update')
             //console.log(document)
             //let editor = document.getElementsByClassName('__TextEditor')[0];
             // document.execCommand('selectAll');
@@ -84,6 +86,7 @@ class TextEditor extends React.Component {
         }
 
         if (prevProps.editLang !== this.props.editLang) {
+            //console.log('update_lang')
             this.lastHtml = this.props.html;
             this.setState({html: this.lastHtml, text: htmlToText(shortenPicSrc(this.lastHtml)), normalizedHtml: this.props.html});
         }
@@ -220,6 +223,7 @@ class TextEditor extends React.Component {
         const {width, height, acceptText, onePictureMessage, incorrectPicture, protocol, urlMessage, notChosen, translations, titles} = this.props;
         const {htmlEditor, text, textFocused, html, normalizedHtml, modalVisible, modalMessage, modalType, modalFunction, title, menu, cursor, selection, link} = this.state;
 
+        //console.log(this.state.html)
         return (
             <div className={`TextEditor html-${htmlEditor}`} style={{width, height}}>
                 <div className="-tools">
