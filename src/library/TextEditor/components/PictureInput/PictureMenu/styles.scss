@@ -1,0 +1,26 @@
+.picture-menu{
+  display: flex;
+  background-color: white;
+  opacity: 0.8;
+  width: 100px;
+  border-radius: 0 0 3px 3px;
+
+  div{
+    border: 1px solid black;
+    border-top: 0;
+    border-right: 0;
+    flex: 1;
+    cursor: pointer;
+    &[float='true']{
+      display: none;
+    }
+
+    &:first-child{
+      border-radius: 0 0 0 3px;
+    }
+    &:last-child{
+      border-right: 1px solid black;
+      border-radius: 0 0 3px 0;
+    }
+  }
+}

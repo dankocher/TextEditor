@@ -1,0 +1,48 @@
+@import "../../styles/colors";
+
+.te-color-picker {
+  position: absolute;
+  top: 36px;
+  padding: 10px;
+  width: 280px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  background-color: white;
+  border: 1px solid $mainColor;
+  border-radius: 3px;
+
+  .cp-arrow {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0px 10px 10px;
+    border-color: transparent transparent $mainColor;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+  }
+
+  .circle-picker {
+    margin-bottom: 0 !important;
+
+    span:first-child > div > span > div {
+      border: 1px solid gainsboro;
+      //border-radius: 20%;
+    }
+  }
+
+  .tecp-input {
+    input {
+      border: 1px solid $mainColor;
+      border-radius: 3px;
+      padding: 3px 3px 3px 5px;
+    }
+
+    //box-shadow: none;
+  }
+
+}

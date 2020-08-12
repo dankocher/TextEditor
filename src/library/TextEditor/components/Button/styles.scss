@@ -1,0 +1,77 @@
+.button {
+  height: 28px;
+  color: black;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  border-radius: 4px;
+  user-select: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 16px;
+  &.-close {
+    //background-color: transparent;
+    color: #d5d5d5;
+    border: #d5d5d5 1px solid;
+    //transition: all 300ms ease-in-out;
+    width: 231px;
+    &:hover {
+      border-color: white;
+      color: white
+    }
+    &.-disabled {
+      color: darkgray;
+      border-color: darkgray;
+    }
+  }
+  &.-save {
+    background-color: #299555;
+    color: white;
+    transition: background-color 300ms ease-in-out;
+    width: 125px;
+    &:hover {
+      background-color: #2aab6a;
+    }
+    &.-disabled {
+      background-color: #227a47;
+      color: darkgray;
+    }
+  }
+  &.-cancel {
+    background-color: transparent;
+    color: #d5d5d5;
+    border: #d5d5d5 1px solid;
+    transition: all 300ms ease-in-out;
+    width: 86px;
+    &:hover {
+      border-color: white;
+      color: white
+    }
+    &.-disabled {
+      color: darkgray;
+      border-color: darkgray;
+    }
+  }
+  &.-delete {
+    background-color: transparent;
+    color: #f5222d;
+    border: #f5222d 1px solid;
+    transition: all 300ms ease-in-out;
+    width: 86px;
+    &:hover {
+      border-color: #f5222d;
+      color: white;
+      background-color: #f5222d;
+    }
+    &.-disabled {
+      color: #bf333a;
+      border-color: #bf333a;
+    }
+  }
+
+  &.-disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+}

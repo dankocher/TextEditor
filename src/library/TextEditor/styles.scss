@@ -1,3 +1,5 @@
+@import "./styles/colors";
+
 $toolsHeight: 40px;
 
 @font-face {
@@ -9,19 +11,81 @@ $toolsHeight: 40px;
   background-color: white;
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  border-radius: 3px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
   .-tools {
     display: flex;
     width: auto;
     min-width: 100px;
-    border-bottom: 1px solid lightgray;
+    justify-content: center;
+    //border-bottom: 1px solid lightgray;
     height: $toolsHeight;
+
+    .-html-switcher{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      user-select: none;
+      cursor: pointer;
+
+      &.-show{
+        background-color: lightgray;
+      }
+
+      &.-only{
+        background-color: grey;
+      }
+    }
+
+    //.teb-container {
+    //  border: 1px solid black;
+    //  width: 38px;
+    //  height: 34px;
+    //  &:first-child{
+    //    border-radius: 0 0 0 3px;
+    //  }
+    //  &:last-child{
+    //    border: 1px solid black;
+    //    border-top: 0;
+    //    border-radius: 0 0 3px 0;
+    //  }
+    //  border-right: 0;
+    //  border-top: 0;
+    //}
+
+    .text-editor-button{
+      &:first-child{
+        border-radius: 0 0 0 3px;
+      }
+      &:last-child{
+        border: 1px solid black;
+        border-top: 0;
+        border-radius: 0 0 3px 0;
+      }
+      border-right: 0;
+      border-top: 0;
+    }
+
+    //div{
+    //  &:last-child{
+    //    border: 1px solid black;
+    //  }
+    //  border-right: 0;
+    //}
   }
   .text-editor {
+    text-align: left;
     outline: currentcolor none medium;
+    
+    //position: relative;
     border: none;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 18px 0;
     //display: flex;
     //flex: 1;
     cursor: text;
@@ -35,20 +99,112 @@ $toolsHeight: 40px;
     box-sizing: border-box;
     overflow: auto;
     line-height: 28px;
-    font-size: 19px;
+    font-size: 18px;
+    color: $text;
     font-family: "Apercu Pro Regular", sans-serif;
+    li{
+      color: black;
+    }
+
+    div{
+      color: $text;
+    }
+
+    img{
+      cursor: move;
+    }
+
+    & > div{
+      color: $text;
+      div{
+        color: black;
+      }
+      height: max-content;
+      text-align: left;
+      font-family: "Apercu Pro Regular", sans-serif;
+      margin: 0 auto 20px;
+      width: 700px;
+      min-height: max-content;
+
+      &.picture{
+        width: 100%;
+        margin: 0 0 20px;
+      }
+
+      img{
+        //width: 100%;
+        //cursor: move;
+
+        &[float]{
+          width: auto;
+          //float: left;
+          //margin-right: 10px;
+        }
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6, b, i, u, strike, span{
+      margin: 30px auto 17px;
+      width: 700px;
+      //font-size: 27.5px;
+      font-family: "Apercu Pro Regular", sans-serif;
+      color: black;
+      //text-align: center;
+    }
+
+    blockquote{
+      text-align: center;
+      position: relative;
+      font-family: "Apercu Pro Regular", sans-serif;
+      font-size: 27px;
+      line-height: 28px;
+      font-weight: bold;
+      color: black;
+      //margin: 50px 0;
+      margin: 70px auto;
+      width: 700px;
+      $dotSize: 10px;
+      span{
+        color: black;
+      }
+      &::before{
+        content: '';
+        width: $dotSize;
+        height: $dotSize;
+        border-radius: 50%;
+        background-color: #0033A0;
+        position: absolute;
+        left: calc(50% - 5px);
+        margin-top: -30px;
+      }
+      &::after{
+        content: '';
+        width: $dotSize;
+        height: $dotSize;
+        border-radius: 50%;
+        background-color: #0033A0;
+        position: absolute;
+        left: calc(50% - 5px);
+        margin-bottom: -30px;
+        bottom: 0;
+      }
+    }
   }
+
   .html-editor {
     box-sizing: border-box;
-    line-height: 1.5;
-    padding: 10px;
+    //line-height: 1.5;
+    //padding: 10px;
     border: none;
     border-top: 1px solid lightgray;
     outline: none;
     resize: none;
-    font-size: 14px;
+    //font-size: 14px;
     font-family: monospace;
-    font-size: 16px;
+    //font-size: 16px;
+    font-size: 14px;
+    line-height: 21px;
+    color: $text;
     &:focus {
       border: none;
       border-top: 1px solid lightgray;
@@ -70,7 +226,7 @@ $toolsHeight: 40px;
       height: 50%;
     }
     .html-editor {
-      height: 50%;
+      height: 50% !important;
     }
   }
   &.html-only {
@@ -79,7 +235,7 @@ $toolsHeight: 40px;
       height: 0;
     }
     .html-editor {
-      height: 100%;
+      height: calc(100% - 40px);
     }
   }
 

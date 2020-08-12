@@ -1,0 +1,117 @@
+.-editor-picture-input{
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  border: 1px solid black;
+
+
+}
+.input-picture{
+     position: absolute;
+     z-index: -1000000000;
+}
+
+.picture-size-selector{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.5);
+
+
+
+  .resize-area{
+    min-width: 400px;
+    min-height: 70px;
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //max-width: 1000px;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 6px 9px rgba(100, 100, 100, 0.5);
+    .pss-items{
+      position: relative;
+      .size{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 48px;
+        height: 100%;
+        color: grey;
+      }
+      .size-change{
+        position: absolute;
+        left: 0;
+        border: 1px solid;
+        border-radius: 3px;
+        padding: 0 5px;
+        background-color: lightgray;
+        &.-float{
+          background-color: white;
+        }
+      }
+
+      &.-height > .ReactCrop > div:first-child{
+        height: 600px;
+        img{
+          height: 100%;
+        }
+      }
+      &.-width > .ReactCrop > div:first-child {
+        width: 1000px;
+        img{
+          width: 100%;
+        }
+      }
+      width: 100%;
+      &.-buttons{
+        display: flex;
+        justify-content: flex-end;
+
+        .button{
+          margin-left: 10px;
+          &.-cancel{
+            background-color: lightgray;
+            color: #4B4B4B;
+            border-color:  #4B4B4B;
+            &:hover {
+              background-color: #bdbdbd;
+              color: #4B4B4B;
+              border-color:  #4B4B4B;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ReactCrop{
+    margin-bottom: 10px;
+  }
+
+  .ReactCrop > div{
+    &:first-child>img{
+      background-color: white;
+      //max-width: 1000px;
+      //max-height: 550px;
+      //width: 1000px;
+    }
+
+    .ReactCrop__image {
+      max-width: initial;
+    }
+  }
+}
