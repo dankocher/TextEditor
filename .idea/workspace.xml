@@ -2,47 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35725cf6-e4ec-46d7-bac2-29170b1158df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/Modal/Modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/Modal/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/assets/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/assets/selection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/Button/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/Button/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/ColorPicker/ColorPicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/ColorPicker/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/Icon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/PictureInput/PictureInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/PictureInput/PictureMenu/PictureMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/PictureInput/PictureMenu/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/PictureInput/SizeSelector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/PictureInput/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/Selector/Selector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/Selector/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/TextTypeButton/TextTypeButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/TextTypeButton/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/htmlEditor/HtmlEditor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/components/htmlEditor/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/constants/api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/constants/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/constants/translations.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/styles/colors.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/utils/rgbConverter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/utils/shortenPicSrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/utils/uploadPicture.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/__TextEditor/TextEditor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/__TextEditor/assets/Apercu Pro Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/__TextEditor/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/__TextEditor/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/__TextEditor/utils/htmlToText.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/__TextEditor/utils/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/__TextEditor/utils/normalizeHtml.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/TextEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/TextEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/utils/htmlToText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/utils/htmlToText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/utils/normalizeHtml.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/utils/normalizeHtml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/components/TextTypeButton/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/components/TextTypeButton/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +16,6 @@
         <option value="JavaScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>border</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -139,14 +95,30 @@
       <updated>1570095299042</updated>
       <workItem from="1570095300453" duration="13357000" />
       <workItem from="1597224521101" duration="371000" />
-      <workItem from="1597224927697" duration="1818000" />
+      <workItem from="1597224927697" duration="3337000" />
     </task>
+    <task id="LOCAL-00001" summary="update TextEditor">
+      <created>1597226998750</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597226998750</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update TextEditor" />
+    <option name="LAST_COMMIT_MESSAGE" value="update TextEditor" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1597226994231">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1597226994231" />
     <state x="420" y="246" key="FileChooserDialogImpl" timestamp="1597224994458">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -167,5 +139,13 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1597226892488" />
+    <state x="232" y="220" key="Vcs.Push.Dialog.v2" timestamp="1597227000546">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="232" y="220" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1597227000546" />
+    <state x="327" y="208" width="626" height="568" key="find.popup" timestamp="1597228830920">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="327" y="208" width="626" height="568" key="find.popup/0.0.1280.984@0.0.1280.984" timestamp="1597228830920" />
   </component>
 </project>
