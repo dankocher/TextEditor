@@ -94,8 +94,12 @@ export default class TextTypeButton extends Component{
         this.props.cleanModalMessage()
     }
 
+    makeColor = (p, type) => {
+        //console.log(type)
+        return type === 'foreColor' ? ` style="color: ${p}"` : ` style="background-color: ${p}"`
+    };
 
-    htmlEdit(type, p){
+    htmlEdit(type, p, typeColor){
         const {cursor, urlMessage, onChange, selection} = this.props;
 
         let lines = JSON.parse(JSON.stringify(cursor.document.$lines));
@@ -138,8 +142,9 @@ export default class TextTypeButton extends Component{
                 this.props.modalMessage({modalVisible: true, title: urlMessage, modalType: 'input', modalFunction: async v => this.createLink(v, cursor, selection, lines, onChange)})
             }
         } else {
+
             if(selection === undefined){
-                // console.log(1)
+                //console.log(1)
                 let zone = this.getCursor(cursor, type, true);
                 let row = cursor.row;
                 let _lineBefore = JSON.parse(JSON.stringify(lines)).splice(0, row).join('').length;
@@ -201,25 +206,28 @@ export default class TextTypeButton extends Component{
                     start.el = start.el+_lineBeforeS;
                     end.el = end.el + _lineBeforeE;
                     lines = lines.join('').split('');
+
                     let a = start.el < end.el;
+                    let _color = typeColor ? this.makeColor(p, typeColor) : '';
 
                     if(sZone === undefined && eZone === undefined) {
                             let str = lines.splice((a ? start.el : end.el), Math.abs(start.el - end.el));
                             let reg = new RegExp(`<\/?${tag}(\\s(?=.).*?)?>`, 'gmi');
-                            lines.splice(a ? start.el : end.el, 0, `<${tag}>${str.join('').replace(reg, '')}</${tag}>`)
+
+                            lines.splice(a ? start.el : end.el, 0, `<${tag}${_color}>${str.join('').replace(reg, '')}</${tag}>`)
                     } else {
                         if(sZone === undefined || eZone === undefined){
                             let str = sZone === undefined ? lines.splice((a ? start.el : end.el), eZone.e - (a ? start.el : end.el)) : lines.splice(sZone.s, (!a ? start.el : end.el)-sZone.s);
                             let reg = new RegExp(`<\/?${tag}(\\s(?=.).*?)?>`, 'gmi');
                             let _reg = new RegExp(`^<${tag}(\\s(?=.).*?)?>`, 'gmi');
-                            let _tag = (sZone === undefined ?eZone:sZone).v.match(_reg) || [`<${tag}>`];
+                            let _tag = (sZone === undefined ?eZone:sZone).v.match(_reg) || [`<${tag}${_color}>`];
                             lines.splice((sZone === undefined ? (a ? start.el : end.el) : sZone.s), 0, `${_tag[0]}${str.join('').replace(reg, '')}</${tag}>`)
                         } else if(JSON.stringify({...sZone, c: undefined}) === JSON.stringify({...eZone, c: undefined})){
                             let str = JSON.parse(JSON.stringify(lines)).splice((a ? start.el : end.el), Math.abs(start.el - end.el));
                             let check = sZone.v.replace(str.join(''), '');
                             let reg = new RegExp(`<\/?${tag}(\\s(?=.).*?)?>`, 'gmi');
                             let _reg = new RegExp(`^<${tag}(\\s(?=.).*?)?>`, 'gmi');
-                            let _tag = sZone.v.match(_reg) || [`<${tag}>`];
+                            let _tag = sZone.v.match(_reg) || [`<${tag}${_color}>`];
                             if(check.length <= `${_tag[0]}</${tag}>`.length){
                                 let _str = sZone.v.replace(/(^<.*?>)|(<\/.*?>$)/gmi, '');
                                 lines.splice(sZone.s, sZone.v.length, `${_str}`)
@@ -229,9 +237,11 @@ export default class TextTypeButton extends Component{
                         } else {
                             let str = JSON.parse(JSON.stringify(lines)).splice(sZone.s, eZone.e-sZone.s);
                             let reg = new RegExp(`<\/?${tag}(\\s(?=.).*?)?>`, 'gmi');
-                            lines.splice(sZone.s, eZone.e-sZone.s, `<${tag}>${str.join('').replace(reg, '')}</${tag}>`)
+                            lines.splice(sZone.s, eZone.e-sZone.s, `<${tag}${_color}>${str.join('').replace(reg, '')}</${tag}>`)
                         }
                     }
+                    //console.log(tag)
+
                     lines = lines.join('');
                     lines = htmlToText(lines);
                     onChange(lines)
@@ -330,7 +340,7 @@ export default class TextTypeButton extends Component{
             }
         } else {
             if (cursor === undefined && !this.props.html) {
-                console.log(1)
+                //console.log(1)
                 let selection = window.getSelection();
 
                 const {anchorNode, anchorOffset, focusNode, focusOffset} = window.getSelection();
@@ -350,10 +360,11 @@ export default class TextTypeButton extends Component{
                     this.buttonFunc(_editor, type, param, selection)
                 }
             } else if (cursor !== undefined) {
-                if (type === 'foreColor') {
-                    type = 'font';
-                    this.setState({foreColor: !this.state.foreColor,
-                        changeColorFunc: this.state.changeColorFunc ? null : (p) => this.htmlEdit(type, p)})
+                //console.log(type)
+                if (type === 'foreColor' || type === 'hiliteColor') {
+                    //type = 'font';
+                    this.setState({[type]: !this.state[type],
+                        changeColorFunc: this.state.changeColorFunc ? null : (p) => this.htmlEdit('span', p, type)})
                 } else {
                     this.htmlEdit(type)
                 }
@@ -417,6 +428,9 @@ export default class TextTypeButton extends Component{
             case 'font':
                 tag = 'font';
                 break;
+            case 'span':
+                tag = 'span';
+                break;
             case 'bold':
                 tag = 'b';
                 break;
@@ -449,13 +463,13 @@ export default class TextTypeButton extends Component{
         if (type === 'foreColor' || type === 'hiliteColor') {
             color = rgbToHex(document.queryCommandValue(type === 'hiliteColor' ? 'BackColor' : type))
         }
-
+        let white = color === '#ffffff' || color === 'rgb(255, 255, 255)';
         switch (type) {
             case 'foreColor':
                 //console.log('f', color)
                 //icon = 'font-color';
                 return (
-                    <div className={`foreColor${color === '#ffffff' ? ' white-c' : ''}`}>
+                    <div className={`foreColor${white ? ' white-c' : ''}`}>
                         <div>A</div>
                         <div style={{
                             backgroundColor: color
@@ -467,7 +481,7 @@ export default class TextTypeButton extends Component{
                 //console.log('h', color)
                 //icon = 'fill-color';
                 return (
-                    <div className={`hiliteColor${color === '#ffffff' ? ' white-c' : ''}`}>
+                    <div className={`hiliteColor${white ? ' white-c' : ''}`}>
                         <div><Icon name={'color_fill'} size={18} color={'black'}/></div>
                         <div style={{
                             backgroundColor: color
@@ -553,7 +567,7 @@ export default class TextTypeButton extends Component{
 
         let blockquote = document.queryCommandValue('formatBlock') === 'blockquote';
         let exist = this.getCursor(cursor, type);
-
+        //console.log(this.state)
         return (
                 <div
                     className={
