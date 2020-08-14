@@ -286,11 +286,16 @@ class Selector extends Component{
 
     onSelect = (selected, value) => {
         const {cursor} = this.props;
+        const {selected: _selected} = this.state;
 
         let type = this.props.type === 'header' ? 'formatBlock' : (value === 'UL' ? 'insertUnorderedList' : 'insertOrderedList');
         let _value = this.props.type === 'header' ? value : null;
 
         if (cursor === undefined && !this.props.html) {
+            if (this.props.type === 'header' && selected === _selected) {
+                _value = 'div';
+            }
+
             document.execCommand(type, false, _value);
         } else if (cursor !== undefined) {
             this.editHtml(value.toLowerCase())
