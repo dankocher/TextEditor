@@ -144,7 +144,7 @@ export default class TextTypeButton extends Component{
         } else {
 
             if(selection === undefined){
-                //console.log(1)
+                console.log(1)
                 let zone = this.getCursor(cursor, type, true);
                 let row = cursor.row;
                 let _lineBefore = JSON.parse(JSON.stringify(lines)).splice(0, row).join('').length;
@@ -191,7 +191,7 @@ export default class TextTypeButton extends Component{
                     onChange(line)
                 }
             } else {
-                //console.log(2)
+                console.log(2)
                 const {anchor, cursor} = selection;
                 let start = anchor.row > cursor.row ? {row: cursor.row, el: cursor.column} :  {row: anchor.row, el: anchor.column};
                 let end = anchor.row > cursor.row ?  {row: anchor.row, el: anchor.column} :  {row: cursor.row, el: cursor.column};
@@ -362,9 +362,9 @@ export default class TextTypeButton extends Component{
             } else if (cursor !== undefined) {
                 //console.log(type)
                 if (type === 'foreColor' || type === 'hiliteColor') {
-                    //type = 'font';
+                    let _type = type === 'foreColor' ? 'font' : 'span';
                     this.setState({[type]: !this.state[type],
-                        changeColorFunc: this.state.changeColorFunc ? null : (p) => this.htmlEdit('span', p, type)})
+                        changeColorFunc: this.state.changeColorFunc ? null : (p) => this.htmlEdit(_type, p, type)})
                 } else {
                     this.htmlEdit(type)
                 }
@@ -389,7 +389,9 @@ export default class TextTypeButton extends Component{
             _editor.removeAllRanges();
             _editor.addRange(rng);
         } else if (type === 'foreColor' || type === 'hiliteColor') {
+            console.log(selection)
             if (selection.anchorNode !== null && selection.focusNode !== null) {
+                //console.log()
                 const {anchorNode, focusNode, anchorOffset, focusOffset} = selection;
 
                 let parent = anchorNode.parentElement.offsetParent.outerText;
@@ -398,16 +400,26 @@ export default class TextTypeButton extends Component{
                 let anchor = anchorNode.data;
                 let focus = focusNode.data;
                 let end, start;
+                //
+                // console.log('anc', anchorNode)
+                // console.log('focus', focusNode)
+                // console.log('_focus', parent.indexOf(focus))
+                // console.log('_anc', parent.indexOf(anchor))
 
-                if (anchorNode === focusNode) {
-                    //console.log('_check');
-                    end = anchorOffset < focusOffset ? focusOffset : anchorOffset;
-                    start = anchorOffset > focusOffset ? focusOffset : anchorOffset;
-                } else if (parent.indexOf(focus) < parent.indexOf(anchor)) {
+                // if (anchorNode === focusNode) {
+                //     console.log('_check');
+                //     end = anchorOffset < focusOffset ? focusOffset : anchorOffset;
+                //     start = anchorOffset > focusOffset ? focusOffset : anchorOffset;
+                // } else
+                if (parent.indexOf(focus) < parent.indexOf(anchor)) {
+                    console.log('_check2');
                     _focusNode = anchorNode;
                     _anchorNode = focusNode;
                     end = anchorOffset;
                     start = focusOffset
+                } else {
+                    end = anchorOffset < focusOffset ? focusOffset : anchorOffset;
+                    start = anchorOffset > focusOffset ? focusOffset : anchorOffset;
                 }
 
                 rng.setStart(_anchorNode, start);
@@ -417,6 +429,7 @@ export default class TextTypeButton extends Component{
                 _editor.addRange(rng);
             }
         }
+        console.log(type, param)
         document.execCommand('styleWithCSS', false, true);
         document.execCommand(type, false, param);
     }

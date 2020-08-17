@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35725cf6-e4ec-46d7-bac2-29170b1158df" name="Default Changelist" comment="update styles for buttons / add color change to html Editor">
+    <list default="true" id="35725cf6-e4ec-46d7-bac2-29170b1158df" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/components/Selector/Selector.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/components/Selector/Selector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/components/TextTypeButton/TextTypeButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/components/TextTypeButton/TextTypeButton.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,8 @@
       <workItem from="1597306888448" duration="5168000" />
       <workItem from="1597395159034" duration="22000" />
       <workItem from="1597400578415" duration="849000" />
-      <workItem from="1597401837370" duration="3255000" />
+      <workItem from="1597401837370" duration="3645000" />
+      <workItem from="1597650090105" duration="5494000" />
     </task>
     <task id="LOCAL-00001" summary="update TextEditor">
       <created>1597226998750</created>
@@ -132,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597334728430</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix headers">
+      <created>1597419580032</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1597419580032</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,41 +150,42 @@
     <MESSAGE value="update" />
     <MESSAGE value="fix styles for TextEditor / update color-picker buttons" />
     <MESSAGE value="update styles for buttons / add color change to html Editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="update styles for buttons / add color change to html Editor" />
+    <MESSAGE value="fix headers" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix headers" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1597419538262">
+    <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1597419573081">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1597419538262" />
+    <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1597419573081" />
     <state x="139" y="79" key="DiffContextDialog" timestamp="1597419536924">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="139" y="79" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1597419536924" />
-    <state x="420" y="246" key="FileChooserDialogImpl" timestamp="1597395179953">
+    <state x="420" y="246" key="FileChooserDialogImpl" timestamp="1597419627040">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="420" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1597395179953" />
-    <state width="1258" height="163" key="GridCell.Tab.0.bottom" timestamp="1597407696870">
+    <state x="420" y="246" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1597419627040" />
+    <state width="1258" height="163" key="GridCell.Tab.0.bottom" timestamp="1597657456938">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1258" height="163" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1597407696870" />
-    <state width="1258" height="163" key="GridCell.Tab.0.center" timestamp="1597407696869">
+    <state width="1258" height="163" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1597657456938" />
+    <state width="1258" height="163" key="GridCell.Tab.0.center" timestamp="1597657456938">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1258" height="163" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1597407696869" />
-    <state width="1258" height="163" key="GridCell.Tab.0.left" timestamp="1597407696868">
+    <state width="1258" height="163" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1597657456938" />
+    <state width="1258" height="163" key="GridCell.Tab.0.left" timestamp="1597657456937">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1258" height="163" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1597407696868" />
-    <state width="1258" height="163" key="GridCell.Tab.0.right" timestamp="1597407696869">
+    <state width="1258" height="163" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1597657456937" />
+    <state width="1258" height="163" key="GridCell.Tab.0.right" timestamp="1597657456938">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1258" height="163" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1597407696869" />
-    <state x="232" y="220" key="Vcs.Push.Dialog.v2" timestamp="1597334730839">
+    <state width="1258" height="163" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1597657456938" />
+    <state x="232" y="220" key="Vcs.Push.Dialog.v2" timestamp="1597419582368">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="220" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1597334730839" />
+    <state x="232" y="220" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1597419582368" />
     <state x="327" y="208" width="626" height="568" key="find.popup" timestamp="1597228830920">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
