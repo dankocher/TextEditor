@@ -401,26 +401,26 @@ export default class TextTypeButton extends Component{
                 let focus = focusNode.data;
                 let end, start;
                 //
-                // console.log('anc', anchorNode)
-                // console.log('focus', focusNode)
-                // console.log('_focus', parent.indexOf(focus))
-                // console.log('_anc', parent.indexOf(anchor))
+                console.log('anc', anchorNode)
+                console.log('focus', focusNode)
+                console.log('_focus', parent.indexOf(focus))
+                console.log('_anc', parent.indexOf(anchor))
 
-                // if (anchorNode === focusNode) {
-                //     console.log('_check');
-                //     end = anchorOffset < focusOffset ? focusOffset : anchorOffset;
-                //     start = anchorOffset > focusOffset ? focusOffset : anchorOffset;
-                // } else
-                if (parent.indexOf(focus) < parent.indexOf(anchor)) {
+                if (anchorNode === focusNode) {
+                    console.log('_check');
+                    end = anchorOffset < focusOffset ? focusOffset : anchorOffset;
+                    start = anchorOffset > focusOffset ? focusOffset : anchorOffset;
+                } else if (parent.indexOf(focus) < parent.indexOf(anchor)) {
                     console.log('_check2');
                     _focusNode = anchorNode;
                     _anchorNode = focusNode;
                     end = anchorOffset;
                     start = focusOffset
-                } else {
-                    end = anchorOffset < focusOffset ? focusOffset : anchorOffset;
-                    start = anchorOffset > focusOffset ? focusOffset : anchorOffset;
                 }
+                // else {
+                //     end = anchorOffset < focusOffset ? focusOffset : anchorOffset;
+                //     start = anchorOffset > focusOffset ? focusOffset : anchorOffset;
+                // }
 
                 rng.setStart(_anchorNode, start);
                 rng.setEnd(_focusNode, end);
