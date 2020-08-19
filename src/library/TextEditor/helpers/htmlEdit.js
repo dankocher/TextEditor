@@ -1,5 +1,5 @@
 import htmlToText from "../utils/htmlToText";
-import {tag} from "./index";
+import {tag as getTag, getCursor, makeColor} from "./index";
 
 
 const htmlEdit = (type, p, typeColor, props) => {
@@ -11,15 +11,15 @@ const htmlEdit = (type, p, typeColor, props) => {
         let sZone, eZone;
 
         if(selection === undefined){
-            sZone = this.getCursor(cursor, 'a', true)
+            sZone = getCursor(cursor, 'a', true)
         } else {
             const {anchor, cursor} = selection;
             let start = anchor.row > cursor.row ? {row: cursor.row, el: cursor.column} :  {row: anchor.row, el: anchor.column};
             let end = anchor.row > cursor.row ?  {row: anchor.row, el: anchor.column} :  {row: cursor.row, el: cursor.column};
             let rSimp = start.row === end.row;
             let cSimp = start.el > end.el;
-            sZone = this.getCursor({document:{$lines:lines}, row: start.row, column: rSimp && cSimp ? end.el : start.el}, 'a', true);
-            eZone = this.getCursor({document:{$lines:lines}, row: end.row, column: rSimp && cSimp ? start.el : end.el}, 'a', true);
+            sZone = getCursor({document:{$lines:lines}, row: start.row, column: rSimp && cSimp ? end.el : start.el}, 'a', true);
+            eZone = getCursor({document:{$lines:lines}, row: end.row, column: rSimp && cSimp ? start.el : end.el}, 'a', true);
         }
 
         if(sZone !== undefined && (selection === undefined || (selection !== undefined && JSON.stringify({...sZone, c: undefined}) === JSON.stringify({...eZone, c: undefined})))){
@@ -48,12 +48,12 @@ const htmlEdit = (type, p, typeColor, props) => {
 
         if(selection === undefined){
             console.log(1)
-            let zone = this.getCursor(cursor, type, true);
+            let zone = getCursor(cursor, type, true);
             let row = cursor.row;
             let _lineBefore = JSON.parse(JSON.stringify(lines)).splice(0, row).join('').length;
             let el = cursor.column+_lineBefore;
             let line = lines.join('').split('');
-            let tag = tag(type);
+            let tag = getTag(type);
 
             if(zone === undefined){
                 if (tag === 'blockquote') {
@@ -98,12 +98,12 @@ const htmlEdit = (type, p, typeColor, props) => {
             const {anchor, cursor} = selection;
             let start = anchor.row > cursor.row ? {row: cursor.row, el: cursor.column} :  {row: anchor.row, el: anchor.column};
             let end = anchor.row > cursor.row ?  {row: anchor.row, el: anchor.column} :  {row: cursor.row, el: cursor.column};
-            let tag = tag(type);
+            let tag = getTag(type);
             if(tag !== ''){
                 let rSimp = start.row === end.row;
                 let cSimp = start.el > end.el;
-                let sZone = this.getCursor({document:{$lines:lines}, row: start.row, column: rSimp && cSimp ? end.el : start.el}, type, true);
-                let eZone = this.getCursor({document:{$lines:lines}, row: end.row, column: rSimp && cSimp ? start.el : end.el}, type, true);
+                let sZone = getCursor({document:{$lines:lines}, row: start.row, column: rSimp && cSimp ? end.el : start.el}, type, true);
+                let eZone = getCursor({document:{$lines:lines}, row: end.row, column: rSimp && cSimp ? start.el : end.el}, type, true);
                 let _lineBeforeS = JSON.parse(JSON.stringify(lines)).splice(0, start.row).join('').length;
                 let _lineBeforeE = JSON.parse(JSON.stringify(lines)).splice(0, end.row).join('').length;
                 start.el = start.el+_lineBeforeS;
@@ -111,7 +111,7 @@ const htmlEdit = (type, p, typeColor, props) => {
                 lines = lines.join('').split('');
 
                 let a = start.el < end.el;
-                let _color = typeColor ? this.makeColor(p, typeColor) : '';
+                let _color = typeColor ? makeColor(p, typeColor) : '';
 
                 if(sZone === undefined && eZone === undefined) {
                     let str = lines.splice((a ? start.el : end.el), Math.abs(start.el - end.el));

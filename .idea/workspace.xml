@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35725cf6-e4ec-46d7-bac2-29170b1158df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/helpers/htmlEdit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/helpers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/helpers/tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/helpers/buttonLogo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/helpers/createLink.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/helpers/getCursor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/library/TextEditor/helpers/makeColor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/library/TextEditor/components/TextTypeButton/TextTypeButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/components/TextTypeButton/TextTypeButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/helpers/htmlEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/helpers/htmlEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library/TextEditor/helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/library/TextEditor/helpers/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +110,7 @@
       <workItem from="1597401837370" duration="3645000" />
       <workItem from="1597650090105" duration="5971000" />
       <workItem from="1597737388720" duration="3844000" />
-      <workItem from="1597824503256" duration="2515000" />
+      <workItem from="1597824503256" duration="5119000" />
     </task>
     <task id="LOCAL-00001" summary="update TextEditor">
       <created>1597226998750</created>
@@ -158,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597749894697</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update">
+      <created>1597847343795</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1597847343796</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,19 +176,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update TextEditor" />
-    <MESSAGE value="update" />
     <MESSAGE value="fix styles for TextEditor / update color-picker buttons" />
     <MESSAGE value="update styles for buttons / add color change to html Editor" />
     <MESSAGE value="fix headers" />
     <MESSAGE value="update font and background color selector" />
     <MESSAGE value="update color selector for font" />
-    <option name="LAST_COMMIT_MESSAGE" value="update color selector for font" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1597749889884">
+    <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1597847338725">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1597749889884" />
+    <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1597847338725" />
     <state x="139" y="79" key="DiffContextDialog" timestamp="1597419536924">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -203,10 +213,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state width="1258" height="163" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1597846043905" />
-    <state x="232" y="220" key="Vcs.Push.Dialog.v2" timestamp="1597749896406">
+    <state x="232" y="220" key="Vcs.Push.Dialog.v2" timestamp="1597847345677">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="220" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1597749896406" />
+    <state x="232" y="220" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1597847345677" />
     <state x="327" y="208" width="626" height="568" key="find.popup" timestamp="1597228830920">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
